@@ -1,63 +1,61 @@
-🛒 Sistema de Gerenciamento de Produtos
-Este projeto é um Sistema de Gerenciamento de Produtos desenvolvido em Java, utilizando JDBC para integração com banco de dados Apache Derby e Swing para a interface gráfica.
-O código segue princípios SOLID e uma estrutura organizada em pacotes para garantir escalabilidade e manutenção facilitada.
+# 🛒 Sistema de Gerenciamento de Produtos
 
-📌 Funcionalidades
-Cadastrar Produto – Adiciona novos produtos ao sistema.
+Um sistema desenvolvido em **Java** com **Swing** para gerenciamento de produtos, incluindo funcionalidades de listagem, venda, cadastro e atualização em tempo real.
 
-Listar Produtos – Exibe todos os produtos em uma tabela organizada.
+---
 
-Editar Produto – Permite atualizar as informações de um produto existente.
+## 📌 Funcionalidades
 
-Excluir Produto – Remove produtos do banco de dados.
+- **Listagem de Produtos**  
+  Exibe todos os produtos cadastrados com atualização automática em tempo real.
+  
+- **Venda de Produtos**  
+  Permite selecionar um produto e registrar uma venda, atualizando o estoque imediatamente.
 
-Vender Produto – Atualiza a quantidade disponível após uma venda.
+- **Cadastro de Produtos**  
+  Adiciona novos produtos com nome, preço e quantidade inicial.
 
-📂 Estrutura do Projeto
+- **Atualização de Estoque**  
+  Modifica a quantidade e preço de produtos já cadastrados.
+
+---
+
+## 🗂 Estrutura do Projeto
+
 src/
-│── app/                  # Classe principal para iniciar o sistema
-│── model/                # Entidades e classes de domínio
-│── repository/           # Acesso e manipulação do banco de dados (DAO)
-│── service/               # Lógica de negócios
-│── ui/                    # Interfaces gráficas (Swing)
-│── util/                  # Utilitários e helpers
-
-🛠 Tecnologias Utilizadas
-Java 17+
-
-Swing (Interface Gráfica)
-
-JDBC (Conexão com o banco)
-
-Apache Derby (Banco de Dados)
-
-Padrões de Projeto: DAO, MVC e princípios SOLID
-
-🚀 Como Executar
-Clonar o repositório
-
-
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
-
-Configurar o banco de dados Apache Derby
-
-O Derby é configurado automaticamente via JDBC embutido no projeto.
-
-Certifique-se de que a pasta de dados esteja acessível.
-
-Compilar e executar o projeto
+├── app/
+│ ├── Main.java
+│
+├── model/
+│ ├── Produto.java
+│
+├── repository/
+│ ├── ProdutoRepository.java
+│
+├── service/
+│ ├── ProdutoService.java
+│
+├── ui/
+│ ├── CadastroProdutoUI.java
+│ ├── VenderProdutoUI.java
+│ ├── ListagemProdutosUI.java
+│
+└── util/
+├── ConnectionFactory.java
 
 
-javac -cp "lib/*;src" -d bin src/app/Main.java
-java -cp "lib/*;bin" app.Main
+---
 
+## 🚀 Como Executar
 
-👨‍💻 Autor
-Arthur Marques Soares Lima
-
-Ciência da Computação - UFU
-
-Técnico em Redes de Computadores - IFTM
-
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+2. **Compile o projeto**
+   ```bash
+   javac -d bin src/**/*.java
+3. **Execute o programa**
+  ```bash
+  java -cp bin app.Main
 
